@@ -32,9 +32,20 @@ function deleteItem() {
 
 }
 
+function checkItem(){
+  $('.shopping-list').on('click', '.shopping-item-toggle', function(){
+    
+    $(this)
+      .closest('li')
+      .children('.shopping-item')
+      .toggleClass('shopping-item__checked');
+  });
+}
+
 function main() {
   createItem();
   deleteItem();
+  checkItem();
 }
 
 $(main);
